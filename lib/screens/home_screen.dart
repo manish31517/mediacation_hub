@@ -20,12 +20,68 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String _country = 'IN';
-
+  String currentProfilePic = "https://avatars3.githubusercontent.com/u/16825392?s=460&v=4";
+  String otherProfilePic = "https://yt3.ggpht.com/-2_2skU9e2Cw/AAAAAAAAAAI/AAAAAAAAAAA/6NpH9G8NWf4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg";
+ //this method are used to switch user
+  void _switchUser(){
+   String backupString = currentProfilePic;
+    this.setState(() {
+     currentProfilePic=otherProfilePic;
+     otherProfilePic = backupString;
+   });
+  }
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: CustomAppBar(),
+
+      drawer: Drawer(
+       child: new ListView(
+        children: <Widget>[
+          new UserAccountsDrawerHeader(
+              accountName: new Text("My Drawer App"),
+              accountEmail: new Text('matul31517@gmail.com'),
+              currentAccountPicture: new GestureDetector(
+                onTap: ()=> print("This is the current user"),
+                child: new CircleAvatar(
+                  backgroundImage: new NetworkImage(currentProfilePic),
+                ),
+              ),
+              otherAccountsPictures:<Widget> [
+          new GestureDetector(
+      onTap: ()=> _switchUser(),
+    child: new CircleAvatar(
+    backgroundImage: new NetworkImage(otherProfilePic),
+    ),
+    ),
+              ],
+              decoration: new BoxDecoration(
+             image: new DecorationImage(
+               fit: BoxFit.fill,
+               image: new NetworkImage("https://img00.deviantart.net/35f0/i/2015/018/2/6/low_poly_landscape__the_river_cut_by_bv_designs-d8eib00.jpg")
+             ) 
+      )
+          ),
+          new ListTile(
+            title: new Text("First Page"),
+            trailing: new Icon(Icons.arrow_upward),
+          ),
+          new ListTile(
+            title: new Text("Second Page"),
+            trailing: new Icon(Icons.arrow_right),
+            onTap: ()=>Scaffold(),
+          ),
+          new Divider(),
+          new ListTile(
+            title: new Text("Close"),
+            trailing: new Icon(Icons.cancel),
+            onTap: ()=> Navigator.of(context).pop(),
+          )
+
+        ],
+       ),
+      ),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
