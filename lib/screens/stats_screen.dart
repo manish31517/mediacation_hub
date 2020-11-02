@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_covid_dashboard_ui/config/palette.dart';
 import 'package:flutter_covid_dashboard_ui/config/styles.dart';
 import 'package:flutter_covid_dashboard_ui/data/data.dart';
-import 'package:flutter_covid_dashboard_ui/widgets/custom_app_bar_nw.dart';
 import 'package:flutter_covid_dashboard_ui/widgets/widgets.dart';
-
+import 'drawer_imp.dart';
 class StatsScreen extends StatefulWidget {
   @override
   _StatsScreenState createState() => _StatsScreenState();
 }
-
 class _StatsScreenState extends State<StatsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette.primaryColor,
-      appBar: CustomAppBar2(),
+      appBar: CustomAppBar(),
+      drawer: DrawerImp(),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[

@@ -1,7 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid_dashboard_ui/config/styles.dart';
-
 class CovidBarChart extends StatelessWidget {
   final List<double> covidCases;
 
