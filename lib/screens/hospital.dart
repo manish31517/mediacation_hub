@@ -25,7 +25,7 @@ class _HospitalState extends State<Hospital> {
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
           _buildHeader(screenHeight),
-          _buildYourOwnTest(screenHeight,_state),
+          _showHospitalInfo(screenHeight,_state),
 
         ],
       ),
@@ -85,7 +85,7 @@ class _HospitalState extends State<Hospital> {
 
   }
 }
-SliverToBoxAdapter _buildYourOwnTest(double screenHeight,String state) {
+SliverToBoxAdapter _showHospitalInfo(double screenHeight,String state) {
   return SliverToBoxAdapter(
     child: Container(
       margin: const EdgeInsets.symmetric(
@@ -105,11 +105,40 @@ SliverToBoxAdapter _buildYourOwnTest(double screenHeight,String state) {
                     style: TextStyle(fontWeight: FontWeight.bold,
                     fontSize: 18),
                   ),
+
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      // child: Text(DataSource.questionAnswers[index]['answer']),
-                    )
+                    Padding(padding: EdgeInsets.all(10)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: <Widget>[
+                       Column(
+                         children: <Widget>[
+                           Text("City : "+HospitalData.hospitalData[state][index]['city'],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
+                         ],
+                       ),
+                         Column(
+                         children: <Widget>[
+                          Text("OwnerShip - "+HospitalData.hospitalData[state][index]['ownership'],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    ]     )
+                       ]
+                       ),
+                    Padding(padding: EdgeInsets.all(10)),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       children: <Widget>[
+                         Column(
+                         children: <Widget>[
+                          Text("Covid Beds : - "+HospitalData.hospitalData[state][index]['hospitalBeds'].toString(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
+                    ]     ),
+                         Column(
+                           children: <Widget>[
+                             Text("Admission Capacity : - "+HospitalData.hospitalData[state][index]['admissionCapacity'].toString(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
+                           ],
+                         ),
+
+                       ]
+                       ),
+                    Padding(padding: EdgeInsets.all(10)),
                   ],
                 );
               })
@@ -119,6 +148,3 @@ SliverToBoxAdapter _buildYourOwnTest(double screenHeight,String state) {
 }
 
 
-SliverToBoxAdapter _showData(String  str) {
-
-}

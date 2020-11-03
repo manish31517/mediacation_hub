@@ -1,6 +1,6 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_covid_dashboard_ui/screens/Awarness_info.dart';
 import 'package:flutter_covid_dashboard_ui/screens/hospital.dart';
 import 'package:flutter_covid_dashboard_ui/screens/screens.dart';
 class BottomNavScreen extends StatefulWidget {
@@ -13,7 +13,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     HomeScreen(),
     StatsScreen(),
     Hospital(),
-    Scaffold(),
+    AwarnessInfo(),
   ];
   int _currentIndex = 0;
 
