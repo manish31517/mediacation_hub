@@ -1,6 +1,8 @@
 import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_covid_dashboard_ui/screens/setting.dart';
+import 'package:flutter_covid_dashboard_ui/main.dart';
+import 'package:flutter_covid_dashboard_ui/screens/faq.dart';
 bool isSwitched = false;
 class DrawerImp extends StatefulWidget with PreferredSizeWidget {
   @override
@@ -27,6 +29,7 @@ class _DrawerImpState extends State<DrawerImp> {
   }
 
   Widget build(BuildContext context) {
+    MyApp  mp;
     return Drawer(
       child: new ListView(
         children: <Widget>[
@@ -56,17 +59,6 @@ class _DrawerImpState extends State<DrawerImp> {
               )
           ),
           new ListTile(
-            title: new Text("About Us"),
-            trailing: new Icon(Icons.arrow_upward),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new Setting(
-                      'First Page')));
-            },
-
-          ),
-          new ListTile(
             title: new Text("Dark Mode"),
             trailing: Switch(
                 value: isSwitched,
@@ -80,6 +72,16 @@ class _DrawerImpState extends State<DrawerImp> {
                 ),
 
           ),
+          new ListTile(
+            title: new Text("FAQs"),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new FAQPages()));
+            },
+
+          ),
+
           new Divider(),
           new ListTile(
             title: new Text("Close"),

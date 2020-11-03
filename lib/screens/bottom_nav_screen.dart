@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_covid_dashboard_ui/screens/hospital.dart';
 import 'package:flutter_covid_dashboard_ui/screens/screens.dart';
 class BottomNavScreen extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   final List _screens = [
     HomeScreen(),
     StatsScreen(),
-    Scaffold(),
+    Hospital(),
     Scaffold(),
   ];
   int _currentIndex = 0;

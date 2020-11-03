@@ -26,12 +26,6 @@ class CountryDropdown extends StatelessWidget {
               .map((e) => DropdownMenuItem(
                     child: Row(
                       children: <Widget>[
-                        CircleAvatar(
-                          radius: 12.0,
-                          child: Image.asset(
-                            'assets/images/${e.toLowerCase()}_flag.png',
-                          ),
-                        ),
                         const SizedBox(width: 8.0),
                         Text(
                           e,
