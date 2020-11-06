@@ -5,6 +5,7 @@ import 'package:flutter_covid_dashboard_ui/config/styles.dart';
 import 'package:flutter_covid_dashboard_ui/data/data.dart';
 import 'package:flutter_covid_dashboard_ui/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 void customLaunch(command) async {
   if (await canLaunch(command)) {
     await launch(command);
@@ -103,7 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         horizontal: 15.0,
                       ),
                       onPressed: () {
-
                         customLaunch('tel:1075');
                       },
                       color: Colors.red,
