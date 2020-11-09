@@ -100,7 +100,11 @@ class _DrawerImpState extends State<DrawerImp> {
           ),
           new ListTile(
             title: new Text(
+<<<<<<< HEAD
               "FAQS",
+=======
+              "FAQs",
+>>>>>>> bc39ff8be30c2612166679f0e2b04d9e0459f562
               style: TextStyle(fontSize: 18),
             ),
             onTap: () {

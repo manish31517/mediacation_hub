@@ -32,5 +32,8 @@ class AwarnessInfo extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc39ff8be30c2612166679f0e2b04d9e0459f562
 }
